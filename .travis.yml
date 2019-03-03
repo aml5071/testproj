@@ -22,5 +22,6 @@ install:
  
 script:
   - npm run lint
-  - npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
+  - nmp run testCI
+#  - npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
 #  - npm run e2e --protractor-config=e2e/protractor-ci.conf.js

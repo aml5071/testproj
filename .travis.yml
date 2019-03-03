@@ -14,11 +14,13 @@ addons:
  
 cache:
   directories:
-     - ./node_modules
+     - ./my-app/node_modules
  
 install:
+  - cd my-app
   - npm install
  
 script:
+  -cd my-app
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
 #  - npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js

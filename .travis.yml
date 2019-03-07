@@ -31,14 +31,11 @@ mono: none
 sudo: required
 dist: xenial
 dotnet: 2.2
-install:
-    - nuget install xunit.runners -Version 2.4.1 -OutputDirectory testrunner
 script:
     - cd source/
     - dotnet restore
     - dotnet build  
- #   - dotnet test ../UnitTests/UnitTests.csproj
-    - dotnet ./testrunner/xunit.runners.2.4.1/tools/xunit.console.clr4.exe ../UnitTests/bin/Debug/netcoreapp2.2/UnitTests.dll
+    - dotnet test ../UnitTests/UnitTests.csproj
 
 #  language: csharp
 # dist: trusty

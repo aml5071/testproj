@@ -1,0 +1,65 @@
+<mat-toolbar>
+    
+    <span class="logo-container" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+      <img class="logo clickable" src="./assets/img/occasions-24px.svg" alt="Home" [routerLink]='["/"]'>
+    </span>
+
+    <div class="align-right">
+
+      <button *ngIf="auth.isAuthenticated() && isVendor" mat-button [routerLink]='["/reservations-vendor"]' [routerLinkActive]='["link-active"]'>
+        <mat-icon>list</mat-icon>
+        Reservations
+      </button>
+
+      <button *ngIf="isOrganizer || isVendor" mat-button [routerLink]='["/events"]'>
+        <mat-icon>event_notes</mat-icon>
+        Events
+      </button>
+
+      <button *ngIf="isVendor" mat-button [routerLink]='["/vendor-services"]'>
+        <mat-icon>store</mat-icon>
+        Services
+      </button>
+      
+
+      <button *ngIf="isOrganizer" mat-button [routerLink]='["/search-vendors"]' [routerLinkActive]='["link-active"]'>
+        <mat-icon>search</mat-icon>
+        Search
+      </button>
+      
+      <button *ngIf="!auth.isAuthenticated()"  mat-button>
+        <a class="nav-link text-dark" (click)="auth.login()">Login</a>
+      </button>
+
+
+      <button *ngIf="auth.isAuthenticated()" mat-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>person</mat-icon>
+        <span class="text-grey">{{ auth?.user?.name }}</span>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-button class="clickable">
+          <span class="nav-link" [routerLink]='["/user-profile"]' [routerLinkActive]='["link-active"]'>Profile</span>
+        </button>
+        <br>
+        <button mat-button class="clickable">
+          <span class="nav-link" (click)="auth.logout()">Logout</span>
+        </button>
+      </mat-menu>
+
+      <button *ngIf="!auth.isAuthenticated() || (isVendor && isOrganizer)" mat-button
+        [routerLink]="['/guest-entry']" [routerLinkActive]="['link-active']">
+        <mat-icon>person_outline</mat-icon>
+        Guest
+      </button>
+
+      <button *ngIf="isVendor && isOrganizer" mat-button [matMenuTriggerFor]="adminMenu">
+        <mat-icon>verified_user</mat-icon>
+        Admin
+      </button>
+      <mat-menu #adminMenu="matMenu">
+        <button mat-menu-item [routerLink]='["/admin"]' [routerLinkActive]='["link-active"]'>
+          App Users
+        </button>
+      </mat-menu>
+    </div>
+</mat-toolbar>

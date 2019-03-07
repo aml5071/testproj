@@ -1,0 +1,23 @@
+
+.logo-continer {
+  padding-top: 100px;
+}
+
+.logo {
+  width: 200px;
+  height: 30px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.text-grey {
+  color: #8394AB;
+}
+
+.mat-toolbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

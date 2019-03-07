@@ -1,5 +1,5 @@
-dist: trusty
-sudo: required
+# dist: trusty
+# sudo: false
  
 # language: node_js
 # node_js:
@@ -27,11 +27,12 @@ sudo: required
 # #  - npm run e2e --protractor-config=e2e/protractor-ci.conf.js
 
 language: csharp
-solution: ./source/source.sln
 mono: none
-dotnet: 2.2.103
+sudo: required
+dist: xenial
+dotnet: 2.2
 script:
- - dotnet restore
+    - dotnet restore
 
 #  language: csharp
 # dist: trusty

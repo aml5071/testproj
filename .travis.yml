@@ -35,7 +35,7 @@ script:
     - cd source/
     - dotnet restore
     - dotnet build  
-    - dotnet test ../UnitTest/UnitTests.csproj
+    - dotnet test ../UnitTests/UnitTests.csproj
 
 #  language: csharp
 # dist: trusty

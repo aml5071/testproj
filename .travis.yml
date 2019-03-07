@@ -1,30 +1,30 @@
 dist: trusty
 sudo: false
  
-language: node_js
-node_js:
-  - "8"
+# language: node_js
+# node_js:
+#   - "8"
   
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - google-chrome-stable
  
-cache:
-  directories:
-     - ./my-app/node_modules
+# cache:
+#   directories:
+#      - ./my-app/node_modules
  
-install:
-  - cd my-app
-  - npm install
+# install:
+#   - cd my-app
+#   - npm install
  
-script:
-  - npm run lint
-  - npm run testCI
-#  - npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
-#  - npm run e2e --protractor-config=e2e/protractor-ci.conf.js
+# script:
+#   - npm run lint
+#   - npm run testCI
+# #  - npm run test --no-watch --no-progress --browsers=ChromeHeadlessCI
+# #  - npm run e2e --protractor-config=e2e/protractor-ci.conf.js
 
 language: csharp
 solution: ./source/source.sln

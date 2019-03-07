@@ -32,6 +32,7 @@ sudo: required
 dist: xenial
 dotnet: 2.2
 script:
+    - cd source/
     - dotnet restore
 
 #  language: csharp
